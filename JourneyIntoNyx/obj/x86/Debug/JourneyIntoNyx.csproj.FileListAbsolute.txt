@@ -29,4 +29,7 @@ C:\Users\maart\Desktop\JourneyIntoNyx\JourneyIntoNyx\bin\Windows\x86\Debug\Conte
 C:\Users\maart\Desktop\JourneyIntoNyx\JourneyIntoNyx\bin\Windows\x86\Debug\Content\spriteRight.xnb
 C:\Users\maart\Desktop\JourneyIntoNyx\JourneyIntoNyx\bin\Windows\x86\Debug\Content\BackdropDawn.xnb
 C:\Users\maart\Desktop\JourneyIntoNyx\JourneyIntoNyx\bin\Windows\x86\Debug\Content\BackdropDawnFull.xnb
-C:\Users\maart\Desktop\JourneyIntoNyx\JourneyIntoNyx\obj\x86\Debug\JourneyIntoNyx.csprojResolveAssemblyReference.cache
+C:\Users\maart\Desktop\JourneyIntoNyx\JourneyIntoNyx\bin\Windows\x86\Debug\Content\Tile5.xnb
+C:\Users\maart\Desktop\JourneyIntoNyx\JourneyIntoNyx\bin\Windows\x86\Debug\Content\Splash.xnb
+C:\Users\maart\Desktop\JourneyIntoNyx\JourneyIntoNyx\bin\Windows\x86\Debug\Content\Tile6.xnb
+C:\Users\maart\Desktop\JourneyIntoNyx\JourneyIntoNyx\bin\Windows\x86\Debug\Content\Tile7.xnb

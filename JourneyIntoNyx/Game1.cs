@@ -7,7 +7,7 @@ namespace JourneyIntoNyx
     /// <summary>
     /// This is the main type for your game.
     /// </summary>
-    public class Game1 : Game
+     class Game1 : Game
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
@@ -16,6 +16,7 @@ namespace JourneyIntoNyx
         Camera camera;
         Texture2D background;
         Rectangle mainFrame;
+        bool splash = true;
 
         public Game1()
         {
@@ -44,16 +45,24 @@ namespace JourneyIntoNyx
             mainFrame = new Rectangle(0, 0, GraphicsDevice.Viewport.Width, GraphicsDevice.Viewport.Height);
             Tiles.Content = Content;
             map.Generate(new int[,]
-            {
-                {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0, },
-                {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0, },
-                {0,0,0,0,0,0,0,0,4,0,0,0,0,0,0,0, },
-                {0,0,0,0,1,3,0,0,0,0,0,0,0,0,0,0, },
-                {1,3,0,0,4,0,0,0,0,0,0,0,0,0,0,0, },
-                {0,0,4,0,0,0,0,0,1,0,0,0,0,0,0,0, },
-                {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0, },
-                {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0, },
-                {0,0,0,0,1,3,0,0,0,0,0,0,0,0,0,0, },
+            {   
+                {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0, },
+                {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0, },
+                {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0, },
+                {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0, },
+                {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0, },
+                {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0, },
+                {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0, },
+                {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0, },
+                {0,0,0,0,1,2,2,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0, },
+                {2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0, },
+                {0,0,0,0,1,0,0,0,0,0,4,0,0,0,0,0,0,0,4,0,3,0,0,0,0,0,0,0,0,0,0,0, },
+                {0,0,0,0,0,2,0,0,0,0,4,0,0,0,0,0,0,2,5,2,0,0,0,0,0,0,0,0,0,0,0,0, },
+                {0,4,4,0,0,0,3,0,0,0,4,0,1,2,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0, },
+                {0,0,0,0,0,0,0,0,0,2,5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0, },
+                {0,0,0,0,0,1,2,3,0,0,0,0,0,0,0,0,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0, },
+                {0,0,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0, },
+                {2,2,5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0 },
             }, 64);
             player.Load(Content);
 
@@ -66,7 +75,13 @@ namespace JourneyIntoNyx
             
             if (player.hasDied == true)
             {
-                player = new Player();
+                
+                player.position.X = 0;
+                player.position.Y = 1024 - 64;
+                player.hasJumped = false;
+                player.hasDied = false;
+                
+              
             }
         }
         protected override void UnloadContent()
@@ -82,10 +97,11 @@ namespace JourneyIntoNyx
             player.Update(gameTime, map);
             foreach (CollisionTiles tile in map.CollisionTiles)
             {
-                player.Collision(tile, map.Width, map.Heigth);
+                player.Collision(tile, map.Width, map.Heigth, tile);
                 camera.Update(player.Position, map.Width, map.Heigth);
-                playerDead();
+               
             }
+            playerDead();
             base.Update(gameTime);
         }
 

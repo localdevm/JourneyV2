@@ -13,6 +13,7 @@ namespace JourneyIntoNyx
     {
         protected Texture2D texture;
         private Rectangle rectangle;
+        public bool tile5touched;
         public Rectangle Rectangle
         {
             get { return rectangle; }
@@ -30,6 +31,8 @@ namespace JourneyIntoNyx
         {
             spriteBatch.Draw(texture, rectangle, Color.White);
         }
+
+
     }
 
     
@@ -37,7 +40,7 @@ namespace JourneyIntoNyx
     class CollisionTiles : Tiles
     {
 
-        int tileType;
+        public int tileType;
         public bool Alive;
        
         //constructor
@@ -46,14 +49,19 @@ namespace JourneyIntoNyx
             texture = Content.Load<Texture2D>("Tile" + i);
             this.Rectangle = newRectangle;
             tileType = i;
-            Alive = true;
+            
         }
 
         public void touchedTile()
         {
-            if (tileType == 4)
-                //do something
-                Alive = false;
+            if (tileType == 5)
+            {
+                var Game2 = new Game();
+                Game2.Run();
+            }
+            if (tileType == 4) { }
+            //do something
+            
             else
             {
                 //do nothing

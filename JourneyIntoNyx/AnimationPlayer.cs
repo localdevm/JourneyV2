@@ -45,6 +45,7 @@ namespace JourneyIntoNyx
         {
             
             timer += (float)gameTime.ElapsedGameTime.TotalSeconds;
+            
             while (timer >= animation.FrameTime)
             {
                 timer -= animation.FrameTime;

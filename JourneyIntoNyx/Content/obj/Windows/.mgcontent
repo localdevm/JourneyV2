@@ -5,7 +5,6 @@
   <Config />
   <SourceFiles>
     <File>C:/Users/maart/Desktop/JourneyIntoNyx/JourneyIntoNyx/Content/Tile1.png</File>
-    <File>C:/Users/maart/Desktop/JourneyIntoNyx/JourneyIntoNyx/Content/Tile2.png</File>
     <File>C:/Users/maart/Desktop/JourneyIntoNyx/JourneyIntoNyx/Content/Tile3.png</File>
     <File>C:/Users/maart/Desktop/JourneyIntoNyx/JourneyIntoNyx/Content/Spritesheet.png</File>
     <File>C:/Users/maart/Desktop/JourneyIntoNyx/JourneyIntoNyx/Content/spriteRight.png</File>
@@ -13,5 +12,10 @@
     <File>C:/Users/maart/Desktop/JourneyIntoNyx/JourneyIntoNyx/Content/BackdropDawnFull.png</File>
     <File>C:/Users/maart/Desktop/JourneyIntoNyx/JourneyIntoNyx/Content/spriteStraight.png</File>
     <File>C:/Users/maart/Desktop/JourneyIntoNyx/JourneyIntoNyx/Content/Tile4.png</File>
+    <File>C:/Users/maart/Desktop/JourneyIntoNyx/JourneyIntoNyx/Content/Splash.png</File>
+    <File>C:/Users/maart/Desktop/JourneyIntoNyx/JourneyIntoNyx/Content/Tile2.png</File>
+    <File>C:/Users/maart/Desktop/JourneyIntoNyx/JourneyIntoNyx/Content/Tile7.png</File>
+    <File>C:/Users/maart/Desktop/JourneyIntoNyx/JourneyIntoNyx/Content/Tile6.png</File>
+    <File>C:/Users/maart/Desktop/JourneyIntoNyx/JourneyIntoNyx/Content/Tile5.png</File>
   </SourceFiles>
 </SourceFileCollection>

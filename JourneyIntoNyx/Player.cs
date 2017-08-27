@@ -14,10 +14,10 @@ namespace JourneyIntoNyx
     {
 
         public AnimationPlayer animationPlayer;
-        public Vector2 position;
+        public Vector2 position = new Vector2(64,1024-64);
         public Vector2 velocity;
         public Rectangle playerRect;
-        private bool hasJumped = false;
+        public bool hasJumped = false;
         public bool hasDied = false;
         Animation walkAnimation;
         Animation idleAnimation;
@@ -88,6 +88,7 @@ namespace JourneyIntoNyx
                 position.Y = newRectangle.Y - playerRect.Height;
                 velocity.Y = 0f;
                 hasJumped = false;
+                
             }
 
             if (playerRect.TouchLeftOf(newRectangle))

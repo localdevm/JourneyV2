@@ -44,7 +44,9 @@
     <Compile Include="Animation.cs" />
     <Compile Include="AnimationPlayer.cs" />
     <Compile Include="Camera.cs" />
+    <Compile Include="Contentmanager.cs" />
     <Compile Include="Game1.cs" />
+    <Compile Include="Game2.cs" />
     <Compile Include="Map.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="Program.cs" />
