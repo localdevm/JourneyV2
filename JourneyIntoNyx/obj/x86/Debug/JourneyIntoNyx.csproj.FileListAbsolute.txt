@@ -34,3 +34,5 @@ C:\Users\maart\Desktop\JourneyIntoNyx\JourneyIntoNyx\bin\Windows\x86\Debug\Conte
 C:\Users\maart\Desktop\JourneyIntoNyx\JourneyIntoNyx\bin\Windows\x86\Debug\Content\Tile6.xnb
 C:\Users\maart\Desktop\JourneyIntoNyx\JourneyIntoNyx\bin\Windows\x86\Debug\Content\Tile7.xnb
 C:\Users\maart\Desktop\JourneyIntoNyx\JourneyIntoNyx\bin\Windows\x86\Debug\Content\oomph.xnb
+C:\Users\maart\Desktop\JourneyIntoNyx\JourneyIntoNyx\bin\Windows\x86\Debug\Content\rude.wma
+C:\Users\maart\Desktop\JourneyIntoNyx\JourneyIntoNyx\bin\Windows\x86\Debug\Content\rude.xnb

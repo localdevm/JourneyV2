@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <SourceFile>C:/Users/maart/Desktop/JourneyIntoNyx/JourneyIntoNyx/Content/rude.mp3</SourceFile>
+  <SourceTime>2017-08-27T21:53:46.102822+02:00</SourceTime>
+  <DestFile>C:/Users/maart/Desktop/JourneyIntoNyx/JourneyIntoNyx/Content/bin/Windows/rude.xnb</DestFile>
+  <DestTime>2017-08-27T21:54:14.8461932+02:00</DestTime>
+  <Importer>Mp3Importer</Importer>
+  <ImporterTime>2017-03-01T16:05:36+01:00</ImporterTime>
+  <Processor>SongProcessor</Processor>
+  <ProcessorTime>2017-03-01T16:05:36+01:00</ProcessorTime>
+  <Parameters>
+    <Key>Quality</Key>
+    <Value>Best</Value>
+  </Parameters>
+  <Dependencies />
+  <BuildAsset />
+  <BuildOutput>
+    <string>C:/Users/maart/Desktop/JourneyIntoNyx/JourneyIntoNyx/Content/bin/Windows/rude.wma</string>
+  </BuildOutput>
+</PipelineBuildEvent>

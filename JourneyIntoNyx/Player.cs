@@ -143,10 +143,12 @@ namespace JourneyIntoNyx
             oohmp.Play();
             position.X = 0;
             position.Y = 1024 - 64;
-   
-              
-            
-            
+        }
+
+        public void playerWin()
+        {
+            /*var game2 = new Game2();
+            game2.Run();*/
         }
 
         public void Draw(GameTime gameTime, SpriteBatch spriteBatch)
