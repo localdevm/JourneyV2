@@ -1,4 +1,5 @@
 ﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
@@ -17,8 +18,10 @@ namespace JourneyIntoNyx
         public Vector2 position = new Vector2(64,1024-64);
         public Vector2 velocity;
         public Rectangle playerRect;
+        int lives;
         public bool hasJumped = false;
         public bool hasDied = false;
+        public SoundEffect oohmp;
         Animation walkAnimation;
         Animation idleAnimation;
         
@@ -32,11 +35,13 @@ namespace JourneyIntoNyx
             get { return position; }
         }
 
+        
         public void Load(ContentManager Content)
         {
             
             walkAnimation = new Animation(Content.Load<Texture2D>(@"spriteRight"), 64, 0.1f, true);
             idleAnimation = new Animation(Content.Load<Texture2D>(@"spriteStraight"), 64, 0.1f, true);
+            oohmp = Content.Load<SoundEffect>(@"oomph");
             //animationPlayer.PlayAnimation(walkAnimation);
             //animationPlayer.PlayAnimation(idleAnimation);
             //Add new animations here
@@ -88,22 +93,39 @@ namespace JourneyIntoNyx
                 position.Y = newRectangle.Y - playerRect.Height;
                 velocity.Y = 0f;
                 hasJumped = false;
-                
+                if (tile.tileType == 4)
+                {
+                    playerDead();
+                }
+
+
             }
 
             if (playerRect.TouchLeftOf(newRectangle))
             {
                 position.X = newRectangle.X - playerRect.Width - 2;
+                if (tile.tileType == 4)
+                {
+                    playerDead();
+                }
             }
 
             if (playerRect.TouchRightOf(newRectangle))
             {
                 position.X = newRectangle.X + newRectangle.Width + 2;
+                if (tile.tileType == 4)
+                {
+                    playerDead();
+                }
             }
 
             if (playerRect.TouchBottomOf(newRectangle))
             {
                 velocity.Y = 5f;
+                if (tile.tileType == 4)
+                {
+                    playerDead();
+                }
             }
 
             if (position.X < 0) position.X = 0;
@@ -114,6 +136,17 @@ namespace JourneyIntoNyx
                 position.Y = yOffset - playerRect.Height;
                 hasDied = true;
             } 
+        }
+
+        private void playerDead()
+        {
+            oohmp.Play();
+            position.X = 0;
+            position.Y = 1024 - 64;
+   
+              
+            
+            
         }
 
         public void Draw(GameTime gameTime, SpriteBatch spriteBatch)

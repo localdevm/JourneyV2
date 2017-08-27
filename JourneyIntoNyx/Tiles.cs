@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace JourneyIntoNyx
 {
-    class Tiles
+    public class Tiles
     {
         protected Texture2D texture;
         private Rectangle rectangle;
@@ -37,7 +37,7 @@ namespace JourneyIntoNyx
 
     
 
-    class CollisionTiles : Tiles
+    public class CollisionTiles : Tiles
     {
 
         public int tileType;
@@ -52,21 +52,6 @@ namespace JourneyIntoNyx
             
         }
 
-        public void touchedTile()
-        {
-            if (tileType == 5)
-            {
-                var Game2 = new Game();
-                Game2.Run();
-            }
-            if (tileType == 4) { }
-            //do something
-            
-            else
-            {
-                //do nothing
-            }
-        }
 
     }
 }

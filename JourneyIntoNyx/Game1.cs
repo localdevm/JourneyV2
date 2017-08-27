@@ -75,11 +75,12 @@ namespace JourneyIntoNyx
             
             if (player.hasDied == true)
             {
-                
+                player.oohmp.Play();
                 player.position.X = 0;
                 player.position.Y = 1024 - 64;
                 player.hasJumped = false;
                 player.hasDied = false;
+               
                 
               
             }
@@ -97,7 +98,7 @@ namespace JourneyIntoNyx
             player.Update(gameTime, map);
             foreach (CollisionTiles tile in map.CollisionTiles)
             {
-                player.Collision(tile, map.Width, map.Heigth, tile);
+                player.Collision(tile, map.Width, map.Heigth);
                 camera.Update(player.Position, map.Width, map.Heigth);
                
             }
