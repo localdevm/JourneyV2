@@ -36,3 +36,4 @@ C:\Users\maart\Desktop\JourneyIntoNyx\JourneyIntoNyx\bin\Windows\x86\Debug\Conte
 C:\Users\maart\Desktop\JourneyIntoNyx\JourneyIntoNyx\bin\Windows\x86\Debug\Content\oomph.xnb
 C:\Users\maart\Desktop\JourneyIntoNyx\JourneyIntoNyx\bin\Windows\x86\Debug\Content\rude.wma
 C:\Users\maart\Desktop\JourneyIntoNyx\JourneyIntoNyx\bin\Windows\x86\Debug\Content\rude.xnb
+C:\Users\maart\Desktop\JourneyIntoNyx\JourneyIntoNyx\obj\x86\Debug\JourneyIntoNyx.csprojResolveAssemblyReference.cache

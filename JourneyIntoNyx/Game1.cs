@@ -16,9 +16,12 @@ namespace JourneyIntoNyx
         Player player;
         Camera camera;
         Texture2D background;
+        Texture2D splashy;
         Rectangle mainFrame;
         bool splash = true;
-        
+        private const float _delay = 5; // seconds
+        private float _remainingDelay = _delay;
+
 
         public Game1()
         {
@@ -44,6 +47,7 @@ namespace JourneyIntoNyx
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
             background = Content.Load<Texture2D>(@"BackdropDawnFull");
+            splashy = Content.Load<Texture2D>(@"Splash");
             mainFrame = new Rectangle(0, 0, GraphicsDevice.Viewport.Width, GraphicsDevice.Viewport.Height);
             Tiles.Content = Content;
             Song song = Content.Load<Song>(@"rude");
@@ -53,16 +57,16 @@ namespace JourneyIntoNyx
             {   
                 {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0, },
                 {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0, },
-                {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0, },
-                {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0, },
-                {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0, },
-                {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0, },
-                {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0, },
-                {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0, },
-                {0,0,0,0,1,2,2,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0, },
-                {2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4,0,0,0,0,0,0,0,0,0,0, },
-                {0,0,0,0,1,0,0,0,0,0,4,0,0,0,0,0,0,0,4,0,2,0,4,0,0,0,0,0,0,0,0,0, },
-                {0,0,0,0,0,2,0,0,0,0,4,0,0,0,0,0,0,2,5,2,0,0,0,2,0,0,0,0,0,0,0,0, },
+                {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,7,0,0,0,0,0,0,0,0,0,0,0,0,0, },
+                {0,0,0,0,0,0,2,0,0,0,0,2,2,0,4,2,0,1,5,3,0,0,0,0,0,0,0,0,0,0,0,0, },
+                {0,0,0,0,0,0,0,2,0,0,0,0,0,0,0,0,0,0,5,0,0,0,0,0,0,0,0,0,0,0,0,0, },
+                {0,0,0,0,0,0,0,0,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0, },
+                {0,0,0,0,0,0,0,0,5,4,0,1,2,0,0,0,1,2,2,2,3,0,0,0,0,0,0,0,0,0,0,0, },
+                {0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,0,0,0,0,0,0,2,0,0,0,0,0,0,0,0,0,0, },
+                {0,0,0,0,1,2,2,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,0,0,0,0,0,0,0, },
+                {2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4,0,0,5,2,4,2,0,0,0,0, },
+                {0,0,0,0,1,0,0,0,0,0,4,0,0,0,0,0,0,0,4,0,2,0,4,0,0,0,0,0,0,2,0,0, },
+                {0,0,0,0,0,2,0,0,0,0,4,0,0,0,0,0,0,2,5,2,0,0,0,2,0,0,0,0,0,0,0,2, },
                 {0,4,4,0,0,0,3,0,0,0,4,0,1,2,3,0,0,0,0,0,0,0,0,0,0,0,0,0,2,0,0,0, },
                 {0,0,0,0,0,0,0,0,0,2,5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,0,0,0,0, },
                 {0,0,0,0,0,1,2,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,0,0,0,0,0,0, },
@@ -100,6 +104,21 @@ namespace JourneyIntoNyx
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
 
+            if (splash == true)
+            {
+                var timer = (float)gameTime.ElapsedGameTime.TotalSeconds;
+
+                _remainingDelay -= timer;
+
+                if (_remainingDelay <= 0)
+                {
+                    
+                    _remainingDelay = _delay;
+                    splash = false;
+                }
+
+            }
+
             player.Update(gameTime, map);
             foreach (CollisionTiles tile in map.CollisionTiles)
             {
@@ -114,19 +133,34 @@ namespace JourneyIntoNyx
        
         protected override void Draw(GameTime gameTime)
         {
-            GraphicsDevice.Clear(Color.CornflowerBlue);
 
-            // TODO: Add your drawing code here
-            spriteBatch.Begin();
-            spriteBatch.Draw(background, mainFrame, Color.White);
-            spriteBatch.End();
+            //Only draw this for the beginning
+            if (splash == true)
+            {
+                GraphicsDevice.Clear(Color.CornflowerBlue);
+                //spriteBatch.Draw();
+                spriteBatch.Begin();
+                spriteBatch.Draw(splashy, mainFrame, Color.White);
+                spriteBatch.End();
+            }
 
-            spriteBatch.Begin(SpriteSortMode.Deferred,BlendState.AlphaBlend,null,null,null,null,camera.Transform);
-            map.Draw(spriteBatch);
-            player.Draw(gameTime,spriteBatch);
-            spriteBatch.End();
+            else
+            {
+                GraphicsDevice.Clear(Color.CornflowerBlue);
 
-            base.Draw(gameTime);
+                // TODO: Add your drawing code here
+                spriteBatch.Begin();
+                spriteBatch.Draw(background, mainFrame, Color.White);
+                spriteBatch.End();
+
+                spriteBatch.Begin(SpriteSortMode.Deferred, BlendState.AlphaBlend, null, null, null, null, camera.Transform);
+                map.Draw(spriteBatch);
+                player.Draw(gameTime, spriteBatch);
+                spriteBatch.End();
+
+                base.Draw(gameTime);
+            }
+            
         }
     }
 }
