@@ -34,14 +34,8 @@ namespace JourneyIntoNyx
             base.Initialize();
         }
 
-        public void dead()
-        {
-            if (player.Alive == false)
-            {
-                player = new Player();
-            }
-        }
 
+     
         protected override void LoadContent()
         {
             // Create a new SpriteBatch, which can be used to draw textures.
@@ -67,6 +61,14 @@ namespace JourneyIntoNyx
         }
 
        
+        public void playerDead()
+        {
+            
+            if (player.hasDied == true)
+            {
+                player = new Player();
+            }
+        }
         protected override void UnloadContent()
         {
             // TODO: Unload any non ContentManager content here
@@ -82,8 +84,8 @@ namespace JourneyIntoNyx
             {
                 player.Collision(tile, map.Width, map.Heigth);
                 camera.Update(player.Position, map.Width, map.Heigth);
+                playerDead();
             }
-                
             base.Update(gameTime);
         }
 

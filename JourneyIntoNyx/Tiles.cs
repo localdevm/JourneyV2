@@ -38,7 +38,7 @@ namespace JourneyIntoNyx
     {
 
         int tileType;
-        bool Alive;
+        public bool Alive;
        
         //constructor
         public CollisionTiles(int i, Rectangle newRectangle)
@@ -57,8 +57,6 @@ namespace JourneyIntoNyx
             else
             {
                 //do nothing
-
-
             }
         }
 

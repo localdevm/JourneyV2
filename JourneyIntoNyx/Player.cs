@@ -12,16 +12,20 @@ namespace JourneyIntoNyx
 {
     class Player
     {
-        //Aanmaken vars
-        public Texture2D texture;
+
         public AnimationPlayer animationPlayer;
         public Vector2 position;
         public Vector2 velocity;
         public Rectangle playerRect;
         private bool hasJumped = false;
-        public bool Alive;
+        public bool hasDied = false;
         Animation walkAnimation;
         Animation idleAnimation;
+        
+        /*
+        public int Heigth { return PlayerAnimation.FrameWidth; }
+        public int Heigth { return PlayerAnimation.FrameHeigth; }
+        */
 
         public Vector2 Position
         {
@@ -30,17 +34,21 @@ namespace JourneyIntoNyx
 
         public void Load(ContentManager Content)
         {
-            //Animations maken en content laden
+            
             walkAnimation = new Animation(Content.Load<Texture2D>(@"spriteRight"), 64, 0.1f, true);
             idleAnimation = new Animation(Content.Load<Texture2D>(@"spriteStraight"), 64, 0.1f, true);
-           
+            //animationPlayer.PlayAnimation(walkAnimation);
+            //animationPlayer.PlayAnimation(idleAnimation);
+            //Add new animations here
         }
 
         public void Update(GameTime gameTime, Map map)
         {
             position += velocity;
             playerRect = new Rectangle((int)position.X, (int)position.Y, walkAnimation.FrameWidth, walkAnimation.FrameHeight - 2);
+
             Input(gameTime, map);
+
             if (velocity.Y < 10)
                 velocity.Y += 0.4f;
         }
@@ -99,10 +107,12 @@ namespace JourneyIntoNyx
 
             if (position.X < 0) position.X = 0;
             if (position.X > xOffset - playerRect.Width) position.X = xOffset - playerRect.Width;
-            if (position.Y < 0) { velocity.Y = 1f; Alive = false; }
-            if (position.Y > yOffset - playerRect.Height) position.Y = yOffset - playerRect.Height;
-
-
+            if (position.Y < 0) { velocity.Y = 1f; };
+            if (position.Y > yOffset - playerRect.Height)
+            {
+                position.Y = yOffset - playerRect.Height;
+                hasDied = true;
+            } 
         }
 
         public void Draw(GameTime gameTime, SpriteBatch spriteBatch)
