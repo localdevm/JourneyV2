@@ -168,7 +168,7 @@ namespace JourneyIntoNyx
                 spriteBatch.Draw(endsplash, mainFrame, Color.White);
                 spriteBatch.DrawString(scorefont, "Amount died : " + enddeaths, new Vector2(80, 100), Color.Black);
                 int endscore = (200 - enddeaths *5);
-                spriteBatch.DrawString(timetot, "Total score : " + endscore, new Vector2(80, 200), Color.Black);
+                spriteBatch.DrawString(timetot, "Total score : " + endscore, new Vector2(80, 150), Color.Black);
                 spriteBatch.End();
             }
             
