@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SourceFileCollection xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Profile>Reach</Profile>
+  <Platform>Windows</Platform>
+  <Config />
+  <SourceFiles>
+    <File>C:/Users/maart/Desktop/JourneyIntoNyx/JourneyIntoNyx/Content/Tile1.png</File>
+    <File>C:/Users/maart/Desktop/JourneyIntoNyx/JourneyIntoNyx/Content/Tile3.png</File>
+    <File>C:/Users/maart/Desktop/JourneyIntoNyx/JourneyIntoNyx/Content/Spritesheet.png</File>
+    <File>C:/Users/maart/Desktop/JourneyIntoNyx/JourneyIntoNyx/Content/spriteRight.png</File>
+    <File>C:/Users/maart/Desktop/JourneyIntoNyx/JourneyIntoNyx/Content/BackdropDawn.png</File>
+    <File>C:/Users/maart/Desktop/JourneyIntoNyx/JourneyIntoNyx/Content/BackdropDawnFull.png</File>
+    <File>C:/Users/maart/Desktop/JourneyIntoNyx/JourneyIntoNyx/Content/spriteStraight.png</File>
+    <File>C:/Users/maart/Desktop/JourneyIntoNyx/JourneyIntoNyx/Content/Tile4.png</File>
+    <File>C:/Users/maart/Desktop/JourneyIntoNyx/JourneyIntoNyx/Content/Splash.png</File>
+    <File>C:/Users/maart/Desktop/JourneyIntoNyx/JourneyIntoNyx/Content/Tile2.png</File>
+    <File>C:/Users/maart/Desktop/JourneyIntoNyx/JourneyIntoNyx/Content/Tile7.png</File>
+    <File>C:/Users/maart/Desktop/JourneyIntoNyx/JourneyIntoNyx/Content/Tile6.png</File>
+    <File>C:/Users/maart/Desktop/JourneyIntoNyx/JourneyIntoNyx/Content/Tile5.png</File>
+    <File>C:/Users/maart/Desktop/JourneyIntoNyx/JourneyIntoNyx/Content/oomph.wav</File>
+    <File>C:/Users/maart/Desktop/JourneyIntoNyx/JourneyIntoNyx/Content/rude.mp3</File>
+    <File>C:/Users/maart/Desktop/JourneyIntoNyx/JourneyIntoNyx/Content/score.spritefont</File>
+    <File>C:/Users/maart/Desktop/JourneyIntoNyx/JourneyIntoNyx/Content/BackdropDay.png</File>
+    <File>C:/Users/maart/Desktop/JourneyIntoNyx/JourneyIntoNyx/Content/tada.wav</File>
+  </SourceFiles>
+</SourceFileCollection>

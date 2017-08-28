@@ -43,8 +43,8 @@ namespace JourneyIntoNyx
             frameTime = newFrameTime;
             isLooping = newIsLooping;
             FrameCount = texture.Width / FrameWidth;
-            
+
         }
-        
+
     }
 }

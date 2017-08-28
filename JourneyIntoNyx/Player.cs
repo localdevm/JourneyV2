@@ -15,15 +15,18 @@ namespace JourneyIntoNyx
     {
 
         public AnimationPlayer animationPlayer;
-        public Vector2 position = new Vector2(64,1024-64);
+        public Vector2 position = new Vector2(64, 1024 - 64);
         public Vector2 velocity;
         public Rectangle playerRect;
         public bool hasJumped = false;
         public bool hasDied = false;
         public SoundEffect oohmp;
+        public SoundEffect tada;
         Animation walkAnimation;
         Animation idleAnimation;
-        
+        public int amountdied;
+        public bool playerwon = false;
+
         /*
         public int Heigth { return PlayerAnimation.FrameWidth; }
         public int Heigth { return PlayerAnimation.FrameHeigth; }
@@ -34,13 +37,15 @@ namespace JourneyIntoNyx
             get { return position; }
         }
 
-        
+
         public void Load(ContentManager Content)
         {
-            
+
             walkAnimation = new Animation(Content.Load<Texture2D>(@"spriteRight"), 64, 0.1f, true);
             idleAnimation = new Animation(Content.Load<Texture2D>(@"spriteStraight"), 64, 0.1f, true);
             oohmp = Content.Load<SoundEffect>(@"oomph");
+            tada = Content.Load<SoundEffect>(@"tada");
+           
             //animationPlayer.PlayAnimation(walkAnimation);
             //animationPlayer.PlayAnimation(idleAnimation);
             //Add new animations here
@@ -65,7 +70,7 @@ namespace JourneyIntoNyx
                 velocity.X = -(float)gameTime.ElapsedGameTime.TotalMilliseconds / 3;
             else velocity.X = 0f;
 
-            if(Keyboard.GetState().IsKeyDown(Keys.Up) && hasJumped == false)
+            if (Keyboard.GetState().IsKeyDown(Keys.Up) && hasJumped == false)
             {
                 if (map.CanJump(playerRect))
                 {
@@ -74,27 +79,32 @@ namespace JourneyIntoNyx
                     velocity.Y = -9f;
                     hasJumped = true;
                 }
-               
+
             }
 
             if (velocity.X != 0)
                 animationPlayer.PlayAnimation(walkAnimation);
             else if (velocity.X == 0)
                 animationPlayer.PlayAnimation(idleAnimation);
-                
+
         }
 
         public void Collision(CollisionTiles tile, int xOffset, int yOffset)
         {
             Rectangle newRectangle = tile.Rectangle;
 
-            if (playerRect.TouchTopOf(newRectangle)){
+            if (playerRect.TouchTopOf(newRectangle))
+            {
                 position.Y = newRectangle.Y - playerRect.Height;
                 velocity.Y = 0f;
                 hasJumped = false;
                 if (tile.tileType == 4)
                 {
                     playerDead();
+                }
+                if (tile.tileType == 7)
+                {
+                    playerwon = true;
                 }
 
 
@@ -107,6 +117,10 @@ namespace JourneyIntoNyx
                 {
                     playerDead();
                 }
+                if (tile.tileType == 7)
+                {
+                    playerwon = true;
+                }
             }
 
             if (playerRect.TouchRightOf(newRectangle))
@@ -115,6 +129,10 @@ namespace JourneyIntoNyx
                 if (tile.tileType == 4)
                 {
                     playerDead();
+                }
+                if (tile.tileType == 7)
+                {
+                    playerwon = true;
                 }
             }
 
@@ -125,6 +143,11 @@ namespace JourneyIntoNyx
                 {
                     playerDead();
                 }
+
+                if (tile.tileType == 7)
+                {
+                    playerwon = true;
+                }
             }
 
             if (position.X < 0) position.X = 0;
@@ -134,21 +157,18 @@ namespace JourneyIntoNyx
             {
                 position.Y = yOffset - playerRect.Height;
                 hasDied = true;
-            } 
+            }
         }
 
-        private void playerDead()
+        public void playerDead()
         {
             oohmp.Play();
             position.X = 0;
             position.Y = 1024 - 64;
+            amountdied = amountdied + 1;
         }
 
-        public void playerWin()
-        {
-            /*var game2 = new Game2();
-            game2.Run();*/
-        }
+        
 
         public void Draw(GameTime gameTime, SpriteBatch spriteBatch)
         {
@@ -157,8 +177,9 @@ namespace JourneyIntoNyx
                 flip = SpriteEffects.None;
             else if (velocity.X <= 0)
                 flip = SpriteEffects.FlipHorizontally;
-            
+
             animationPlayer.Draw(gameTime, spriteBatch, position, flip);
+            
         }
     }
 }

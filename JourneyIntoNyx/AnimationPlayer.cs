@@ -10,14 +10,14 @@ namespace JourneyIntoNyx
 {
     struct AnimationPlayer
     {
-        
+
         Animation animation;
         public Animation Animation
         {
-            get { return animation ;}
+            get { return animation; }
             set { animation = value; }
         }
-        
+
         int frameIndex;
         public int FrameIndex
         {
@@ -28,7 +28,7 @@ namespace JourneyIntoNyx
         private float timer;
         public Vector2 Origin
         {
-            get { return new Vector2(0,0); }
+            get { return new Vector2(0, 0); }
         }
 
         public void PlayAnimation(Animation newAnimation)
@@ -43,9 +43,9 @@ namespace JourneyIntoNyx
 
         public void Draw(GameTime gameTime, SpriteBatch spriteBatch, Vector2 position, SpriteEffects spriteEffects)
         {
-            
+
             timer += (float)gameTime.ElapsedGameTime.TotalSeconds;
-            
+
             while (timer >= animation.FrameTime)
             {
                 timer -= animation.FrameTime;
