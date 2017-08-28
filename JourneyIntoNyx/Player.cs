@@ -18,7 +18,6 @@ namespace JourneyIntoNyx
         public Vector2 position = new Vector2(64,1024-64);
         public Vector2 velocity;
         public Rectangle playerRect;
-        int lives;
         public bool hasJumped = false;
         public bool hasDied = false;
         public SoundEffect oohmp;

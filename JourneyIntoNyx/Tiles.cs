@@ -35,21 +35,21 @@ namespace JourneyIntoNyx
 
     }
 
-    
+
 
     public class CollisionTiles : Tiles
     {
 
         public int tileType;
         public bool Alive;
-       
+
         //constructor
         public CollisionTiles(int i, Rectangle newRectangle)
         {
             texture = Content.Load<Texture2D>("Tile" + i);
             this.Rectangle = newRectangle;
             tileType = i;
-            
+
         }
 
 
