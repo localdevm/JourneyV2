@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>C:/Users/maart/Desktop/JourneyIntoNyx/JourneyIntoNyx/Content/Spritesheet.png</SourceFile>
-  <SourceTime>2017-08-14T16:23:35.270246+02:00</SourceTime>
-  <DestFile>C:/Users/maart/Desktop/JourneyIntoNyx/JourneyIntoNyx/Content/bin/Spritesheet.xnb</DestFile>
-  <DestTime>2017-08-29T00:28:41.0745952+02:00</DestTime>
+  <SourceFile>C:/Users/LaptopMaarten/Desktop/Journey/JourneyIntoNyx/Content/Spritesheet.png</SourceFile>
+  <SourceTime>2017-08-29T09:04:23.8329778+02:00</SourceTime>
+  <DestFile>C:/Users/LaptopMaarten/Desktop/Journey/JourneyIntoNyx/Content/bin/Spritesheet.xnb</DestFile>
+  <DestTime>2017-08-29T09:14:07.1183064+02:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2017-03-01T16:05:36+01:00</ImporterTime>
   <Processor>TextureProcessor</Processor>

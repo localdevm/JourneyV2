@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>C:/Users/maart/Desktop/JourneyIntoNyx/JourneyIntoNyx/Content/BackdropDawnFull.png</SourceFile>
-  <SourceTime>2017-08-13T12:20:35.5295456+02:00</SourceTime>
-  <DestFile>C:/Users/maart/Desktop/JourneyIntoNyx/JourneyIntoNyx/Content/bin/BackdropDawnFull.xnb</DestFile>
-  <DestTime>2017-08-29T00:28:41.5358121+02:00</DestTime>
+  <SourceFile>C:/Users/LaptopMaarten/Desktop/Journey/JourneyIntoNyx/Content/BackdropDawnFull.png</SourceFile>
+  <SourceTime>2017-08-29T09:04:23.8329778+02:00</SourceTime>
+  <DestFile>C:/Users/LaptopMaarten/Desktop/Journey/JourneyIntoNyx/Content/bin/BackdropDawnFull.xnb</DestFile>
+  <DestTime>2017-08-29T09:14:07.4809293+02:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2017-03-01T16:05:36+01:00</ImporterTime>
   <Processor>TextureProcessor</Processor>

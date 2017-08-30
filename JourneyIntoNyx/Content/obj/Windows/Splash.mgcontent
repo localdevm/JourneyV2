@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>C:/Users/maart/Desktop/JourneyIntoNyx/JourneyIntoNyx/Content/Splash.png</SourceFile>
-  <SourceTime>2017-08-29T00:28:30.6360802+02:00</SourceTime>
-  <DestFile>C:/Users/maart/Desktop/JourneyIntoNyx/JourneyIntoNyx/Content/bin/Windows/Splash.xnb</DestFile>
-  <DestTime>2017-08-29T00:28:47.4649126+02:00</DestTime>
+  <SourceFile>C:/Users/LaptopMaarten/Desktop/Journey/JourneyIntoNyx/Content/Splash.png</SourceFile>
+  <SourceTime>2017-08-29T09:04:23.8329778+02:00</SourceTime>
+  <DestFile>C:/Users/LaptopMaarten/Desktop/Journey/JourneyIntoNyx/Content/bin/Windows/Splash.xnb</DestFile>
+  <DestTime>2017-08-29T09:04:48.6422119+02:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2017-03-01T16:05:36+01:00</ImporterTime>
   <Processor>TextureProcessor</Processor>

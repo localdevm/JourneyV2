@@ -169,13 +169,6 @@
 /processorParam:Quality=Best
 /build:rude.mp3
 
-#begin score.spritefont
-/importer:FontDescriptionImporter
-/processor:FontDescriptionProcessor
-/processorParam:PremultiplyAlpha=True
-/processorParam:TextureFormat=Compressed
-/build:score.spritefont
-
 #begin BackdropDay.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -205,4 +198,11 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:Splash.png
+
+#begin score.spritefont
+/importer:FontDescriptionImporter
+/processor:FontDescriptionProcessor
+/processorParam:PremultiplyAlpha=True
+/processorParam:TextureFormat=Compressed
+/build:score.spritefont
 

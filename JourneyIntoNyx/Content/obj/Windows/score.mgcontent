@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>C:/Users/maart/Desktop/JourneyIntoNyx/JourneyIntoNyx/Content/score.spritefont</SourceFile>
-  <SourceTime>2017-08-28T15:05:39.0782564+02:00</SourceTime>
-  <DestFile>C:/Users/maart/Desktop/JourneyIntoNyx/JourneyIntoNyx/Content/bin/Windows/score.xnb</DestFile>
-  <DestTime>2017-08-28T15:05:50.2420255+02:00</DestTime>
+  <SourceFile>C:/Users/LaptopMaarten/Desktop/Journey/JourneyIntoNyx/Content/score.spritefont</SourceFile>
+  <SourceTime>2017-08-29T09:10:12.063301+02:00</SourceTime>
+  <DestFile>C:/Users/LaptopMaarten/Desktop/Journey/JourneyIntoNyx/Content/bin/Windows/score.xnb</DestFile>
+  <DestTime>2017-08-29T09:14:15.7702402+02:00</DestTime>
   <Importer>FontDescriptionImporter</Importer>
   <ImporterTime>2017-03-01T16:05:36+01:00</ImporterTime>
   <Processor>FontDescriptionProcessor</Processor>

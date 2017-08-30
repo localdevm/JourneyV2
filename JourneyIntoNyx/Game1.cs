@@ -85,7 +85,10 @@ namespace JourneyIntoNyx
             // TODO: use this.Content to load your game content here
         }
 
-
+        public void quit()
+        {
+            this.Exit();
+        }
         public void playerDead()
         {
 
@@ -170,6 +173,16 @@ namespace JourneyIntoNyx
                 int endscore = (200 - enddeaths *5);
                 spriteBatch.DrawString(timetot, "Total score : " + endscore, new Vector2(80, 150), Color.Black);
                 spriteBatch.End();
+                var timer = (float)gameTime.ElapsedGameTime.TotalSeconds;
+
+                _remainingDelay -= timer;
+
+                if (_remainingDelay <= 0)
+                {
+
+                    _remainingDelay = _delay;
+                    quit();
+                }
             }
             
 
